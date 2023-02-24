@@ -18,11 +18,13 @@ func log(msg string, array []string) {
 func main() {
 	var array []string
 
-	fmt.Println("array == nil\n", array == nil)
+	fmt.Println("array is nil:\n", array == nil)
 	log("array", array)
 
 	// it works with nil slices
 	array = append(array, "pedro")
+	log("array", array)
 
+	array = append(array, "ana", "paula")
 	log("array", array)
 }
