@@ -24,8 +24,12 @@ func main() {
 	rename(p)
 	fmt.Println(p.name)
 
-	var p2 *Person = &Person{"peter"}
+	// var p2 *Person = &Person{"peter"}
+	// fmt.Println(p2.name)
+	// renameV2(p2)
+
+	p2 := Person{"peter"}
 	fmt.Println(p2.name)
-	renameV2(p2)
+	renameV2(&p2)
 	fmt.Println(p2.name)
 }
