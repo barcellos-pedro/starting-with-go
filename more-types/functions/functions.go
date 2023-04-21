@@ -12,5 +12,6 @@ func main() {
 	}
 
 	fmt.Println(hello("Pedro"))
+	fmt.Println(hello("Bob"))
 	fmt.Println(helloWorld("Ana", hello))
 }
