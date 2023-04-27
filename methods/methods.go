@@ -6,6 +6,7 @@ type Operations struct {
 	a, b int
 }
 
+// we could omit the receiver 'ops'
 func (ops Operations) add(a, b int) int {
 	return a + b
 }
