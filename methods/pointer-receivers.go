@@ -7,11 +7,15 @@ type Person struct {
 }
 
 /*
-	We can declare methods with pointer receivers.
+We can declare methods with pointer receivers.
 
 With a value receiver, the method operates on a copy of the original value.
 (This is the same behavior as for any other function argument)
 The method must have a pointer receiver to change the value declared in the main function
+
+Reasons to use pointer receivers
+- The method can modify the value that its receiver points to.
+- To avoid copying the value on each method call.
 */
 func (p *Person) changeName(name string) {
 	p.name = name
