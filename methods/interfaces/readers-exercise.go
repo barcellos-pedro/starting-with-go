@@ -15,7 +15,7 @@ func (reader *MyReader) Read(p []byte) (n int, err error) {
 	asciiNum := 65
 	reader.char = fmt.Sprintf("%c", asciiNum)
 	p[0] = byte(asciiNum)
-	return 1, nil
+	return len(p), nil
 }
 
 func main() {
@@ -30,8 +30,9 @@ func main() {
 			break
 		}
 
-		fmt.Printf("ASCII char 65 = %c\n", buff[:bytesRead])
+		fmt.Printf("ASCII char 65 = %c\n", buff[0])
 		fmt.Println("Reader char", reader.char)
+		fmt.Println("Bytes read", bytesRead)
 		fmt.Println(strings.Repeat("-", 20))
 	}
 
