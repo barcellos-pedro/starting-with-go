@@ -16,12 +16,13 @@ func main() {
 	for {
 		bytesRead, err := reader.Read(buffer)
 
-		fmt.Printf("Bytes read: %v\n", bytesRead)
-		fmt.Printf("Content: %q\n", buffer[:bytesRead])
-
 		// Error that indicates end of file
 		if err == io.EOF {
 			break
 		}
+
+		fmt.Printf("Bytes read: %v\n", bytesRead)
+		fmt.Printf("Content: %q\n", buffer[:bytesRead])
+		fmt.Println("-------")
 	}
 }

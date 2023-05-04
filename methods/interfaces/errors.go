@@ -3,7 +3,7 @@ package main
 import "fmt"
 
 // not necessary, just to be explicit
-type Error interface {
+type error interface {
 	Error() string
 }
 
