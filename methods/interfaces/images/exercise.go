@@ -7,19 +7,23 @@ import (
 	"golang.org/x/tour/pic"
 )
 
+// Image unterface to implement its methods on our own Image type
+// https://pkg.go.dev/image#Image
+
+// Own image type
 type Image struct {
-	width, heigth int
+	width, height int
 }
 
-func (i Image) ColorModel() color.Model {
+func (Image) ColorModel() color.Model {
 	return color.RGBAModel
 }
 
 func (i Image) Bounds() image.Rectangle {
-	return image.Rect(0, 0, i.width, i.heigth)
+	return image.Rect(0, 0, i.width, i.height)
 }
 
-func (i Image) At(x, y int) color.Color {
+func (Image) At(x, y int) color.Color {
 	R := uint8(100)
 	G := uint8(50)
 	B := uint8(255)
