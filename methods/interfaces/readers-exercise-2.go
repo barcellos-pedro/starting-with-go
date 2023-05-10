@@ -44,6 +44,6 @@ func (rot *rot13Reader) Read(p []byte) (int, error) {
 
 func main() {
 	messageReader := strings.NewReader("Lbh penpxrq gur pbqr!")
-	rot13 := &rot13Reader{messageReader}
-	io.Copy(os.Stdout, rot13)
+	rot13 := rot13Reader{messageReader}
+	io.Copy(os.Stdout, &rot13)
 }
