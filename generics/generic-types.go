@@ -16,14 +16,17 @@ type SingleLinkedList[T any] interface {
 	push(val T)
 }
 
+// Returns a pointer to a new List to be the 'next' attribute
 func (*List[T]) newList() *List[T] {
 	return &List[T]{}
 }
 
+// Returns the first value
 func (list *List[T]) peek() T {
 	return list.value
 }
 
+// Returns a slice with all the values of type T
 func (list *List[T]) values() []T {
 	if list.next == nil {
 		return []T{list.value}
@@ -43,6 +46,7 @@ func (list *List[T]) values() []T {
 	return values
 }
 
+// Push/Append a value to the List
 func (list *List[T]) push(val T) {
 	newElement := list.newList()
 	newElement.value = val
