@@ -6,8 +6,8 @@ import (
 )
 
 func say(msg string) {
-	for i := 0; i < 5; i++ {
-		time.Sleep(3000 * time.Millisecond)
+	for i := 0; i < 2; i++ {
+		time.Sleep(100 * time.Millisecond)
 		fmt.Println(msg)
 	}
 }
@@ -18,6 +18,6 @@ func say(msg string) {
 // Goroutines run in the same address space
 // so access to shared memory must be synchronized
 func main() {
-	go say("second")
-	say("first")
+	go say("world")
+	say("hello")
 }
