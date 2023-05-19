@@ -22,7 +22,7 @@ func main() {
 
 	ch := make(chan int)
 
-	go sum(numbers1, ch)
+	go sum(numbers1, ch) // execute sum() in another goroutine concurrently
 	go sum(numbers2, ch)
 
 	// total1 := <-ch // if we had used only once the channel
