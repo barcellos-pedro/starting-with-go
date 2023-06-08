@@ -27,10 +27,4 @@ func main() {
 	fmt.Printf("Value: %v | type: %T\n", data["message"], data["message"])
 	fmt.Printf("Value: %v | type: %T\n", data["tags"], data["tags"])
 	fmt.Printf("Value: %v | type: %T\n", data["status"], data["status"])
-
-	if _, ok := data["tags"].([]string); ok {
-		for _, v := range data["tags"].([]string) {
-			fmt.Println(v)
-		}
-	}
 }

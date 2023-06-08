@@ -26,7 +26,8 @@ func sum(a, b int) (int, *MyError) {
 
 func main() {
 	if result, err := sum(0, 0); err != nil {
-		fmt.Println(err)
+		// fmt.Println(err)
+		panic(err)
 	} else {
 		fmt.Println("Result:", result)
 	}
