@@ -9,16 +9,32 @@
 
 <body>
 	<h1>{{ .Title }}</h1>
-	
+
 	{{ with .Data }}
 	{{ $totalHobbies := len .Hobbies }}
-	<p>I have a total of {{ $totalHobbies}} hobbies</p>
-	{{ end }}
-	<ul>
-		{{ range .Data.Hobbies }}
-		<li>{{ . }}</li>
+
+	<p>
+		I have a total of
+		{{ $totalHobbies }}
+		{{ if gt $totalHobbies 1}} hobbies {{ else }} hobby {{ end }}
+	</p>
+
+	<!-- simple range -->
+	{{ range .Hobbies }}
+	<p>{{.}}</p>
+	{{else}}
+	<p>No hobbies to show</p>
+	{{end}}
+
+	<!-- range with index -->
+	<!--
+		{{ range $index, $hobby := .Hobbies }}
+			<p># {{$index}} - {{ $hobby }}</p>
+		{{ else }}
+			No hobbies to show
 		{{ end }}
-	</ul>
+	-->
+	{{ end }}
 </body>
 
 </html>
