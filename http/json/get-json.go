@@ -29,14 +29,14 @@ func main() {
 	respBytes, bytesErr := io.ReadAll(response.Body)
 	handleError(bytesErr)
 
-	var todo map[string]interface{}
+	var todo Todo
 
 	jsonErr := json.Unmarshal(respBytes, &todo)
 	handleError(jsonErr)
 
 	fmt.Println(todo)
-	fmt.Printf("Id: %v\n", todo["id"])
-	fmt.Printf("User ID: %v\n", todo["userId"])
-	fmt.Printf("Title: %v\n", todo["title"])
-	fmt.Printf("Completed: %v\n", todo["completed"])
+	fmt.Printf("ID: %v\n", todo.Id)
+	fmt.Printf("User ID: %v\n", todo.UserId)
+	fmt.Printf("Title: %v\n", todo.Title)
+	fmt.Printf("Completed: %v\n", todo.Completed)
 }
